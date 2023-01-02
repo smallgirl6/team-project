@@ -1,0 +1,65 @@
+/* CSS Reset */
+html, body, div, p, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+body {
+    margin-bottom: 160px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+/* Main Content */
+.outer-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	width: 1200px;
+}
+
+.forecast {
+	flex: auto;
+	width: 50%;
+}
+
+.weather {
+	display: flex;
+}
+
+.today-weather {
+	flex: auto;
+	width: 50%;
+}
+
+.tomorrow-weather {
+	flex: auto;
+	width: 50%;
+}
+
+.weather-map {
+	flex: auto;
+	width: 50%;
+}

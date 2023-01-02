@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>天氣預報網站</title>
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/todayWeather.css" />
+	<link rel="stylesheet" type="text/css" href="/css/tomorrowWeather.css" />
+	<link rel="stylesheet" type="text/css" href="/css/airQuality.css" />
+	<link rel="stylesheet" type="text/css" href="/css/weatherMap.css" />
+</head>
+
+<body>
+
+	<div class="outer-container">
+		<div class="container">
+			<div class="forecast">
+				<div class="weather">
+					<div class="today-weather">
+						<!-- 今天天氣部份 -->
+						<today-weather></today-weather>
+					</div>
+					<div class="tomorrow-weather">
+						<!-- 明天天氣部份 -->
+						<tomorrow-weather></tomorrow-weather>
+					</div>
+				</div>
+				<div>
+					<!-- 空氣品質部份 -->
+					<air-quality></air-quality>
+				</div>
+			</div>
+			<div class="weather-map">
+				<!-- 地圖部份 -->
+				<weather-map></weather-map>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/todayWeather.js"></script>
+	<script src="/js/tomorrowWeather.js"></script>
+	<script src="/js/airQuality.js"></script>
+	<script src="/js/weatherMap.js"></script>
+	<script src="/html/todayWeatherHTML.js"></script>
+	<script src="/html/tomorrowWeatherHTML.js"></script>
+	<script src="/html/airQualityHTML.js"></script>
+	<script src="/html/weatherMapHTML.js"></script>
+</body>
+
+</html>
