@@ -28,6 +28,12 @@ html {
 
 
 /* Main Content */
+body {
+	font-family: "微軟正黑體", "思源黑體", Roboto, sans-serif;
+	background-color: #3c8fd1;
+	color: #fff;
+}
+
 .outer-container {
 	display: flex;
 	align-items: center;
@@ -37,7 +43,7 @@ html {
 
 .container {
 	display: flex;
-	width: 1200px;
+	width: 1500px;
 }
 
 .forecast {
