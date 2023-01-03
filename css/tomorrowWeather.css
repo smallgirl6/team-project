@@ -1,1 +1,85 @@
-/* 請KM負責這個文件 */
+.tomorrow-weather-container {
+    box-sizing: border-box;
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #1a67b1;
+}
+
+.tomorrow-weather-container:hover {
+    background-color: #045bac;
+    transition: background-color .2s linear, border-color .1s linear;
+}
+
+.today-night-weather,
+.tomorrow-day-weather {
+    flex: auto;
+    width: 50%;
+    padding: 5px;
+    opacity: 0;
+}
+
+.today-night-weather.border {
+    border-right: 0.5px solid rgba(255, 255, 255, 0.486);
+}
+
+.today-night-weather-title,
+.today-night-weather-period,
+.today-night-weather-icon,
+.today-night-weather-temp,
+.today-night-rainfall,
+.tomorrow-day-weather-title,
+.tomorrow-day-weather-period,
+.tomorrow-day-weather-icon,
+.tomorrow-day-weather-temp,
+.tomorrow-day-rainfall {
+    margin: 15px;
+}
+
+.today-night-weather-temp,
+.tomorrow-day-weather-temp {
+    font-size: 20px;
+}
+
+.today-night-rainfall,
+.tomorrow-day-rainfall {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.today-night-rainfall-icon,
+.tomorrow-day-rainfall-icon {
+    flex: auto;
+    width: 30%;
+    margin: 13px 5px 5px 5px;
+}
+
+.today-night-rainfall-icon > img,
+.tomorrow-day-rainfall-icon > img {
+    width: 30px;
+    height: 30px;
+}
+
+.today-night-rainfall-rate,
+.tomorrow-day-rainfall-rate {
+    flex: auto;
+    width: 70%;
+    margin: 5px;
+    text-align: left;
+}
+
+.today-night-weather-icon {
+    width: 60%;
+    height: 80px;
+    object-fit: contain;
+}
+
+.tomorrow-day-weather-icon {
+    width: 60%;
+    height: 80px;
+    object-fit: contain;
+}
