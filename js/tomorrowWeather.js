@@ -44,7 +44,9 @@ const view = {
         document.querySelector("#tomorrowDayWeather").style.opacity = "1";
         document.querySelector("#tomorrowNightWeather").style.opacity = "1";
     
-        // Weather Icon
+        // Weather text and Icon
+        document.querySelector("#tomorrowDayWeatherIcon").title = dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName;
+        document.querySelector("#tomorrowNightWeatherIcon").title = dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName;
         document.querySelector("#tomorrowDayWeatherIcon").src = dayWeatherList[dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName];
         document.querySelector("#tomorrowNightWeatherIcon").src = nightWeatherList[dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName];
         
