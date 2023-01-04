@@ -85,17 +85,24 @@ const view1 = {
             document.querySelector("#location").textContent = dataTemp.records.location[event.target.value].locationName + " ";
 
             // Weather Icon
-            document.querySelector("#today-weather-img").src = dayWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[0].parameter.parameterName];
+            if(date.getHours() >= 6 && date.getHours() < 18)
+                document.querySelector("#today-weather-img").src = dayWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[0].parameter.parameterName];
+            else
+                document.querySelector("#today-weather-img").src = nightWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[0].parameter.parameterName];
             
             // Temperature
-            document.querySelector("#today-temp").textContent = dataTemp.records.location[event.target.value].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[0].parameter.parameterName + " °C";
+            document.querySelector("#today-temp").textContent = dataTemp.records.location[event.target.value].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[event.target.value].weatherElement[4].time[0].parameter.parameterName + " °C";
         })
 
         // Set Default Value
         document.querySelector("#location").textContent = dataTemp.records.location[0].locationName + " ";
 
         // Weather Icon
-        document.querySelector("#today-weather-img").src = dayWeatherList[dataTemp.records.location[0].weatherElement[0].time[0].parameter.parameterName];
+        if(date.getHours() >= 6 && date.getHours() < 18)
+            document.querySelector("#today-weather-img").src = dayWeatherList[dataTemp.records.location[0].weatherElement[0].time[0].parameter.parameterName];
+        else
+            document.querySelector("#today-weather-img").src = nightWeatherList[dataTemp.records.location[0].weatherElement[0].time[0].parameter.parameterName];
+        
         
         // Temperature
         document.querySelector("#today-temp").textContent = dataTemp.records.location[0].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[0].parameter.parameterName + " °C";
