@@ -1,1 +1,95 @@
 /* 請Yan負責這個文件 */
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #1a67b1;
+    border-radius: 10px;
+    height: 320px;
+    margin-top: 5px;
+}
+
+.grid-container:hover {
+    background-color: #0959a8;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.icon-grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.icon-grid-item {
+    padding: 10px;
+    text-align: center;
+}
+
+.fa{
+    color: #1a67b1;
+    background-color: #fff;
+    box-shadow: 0 0 7px 2px #fff;
+}
+
+.icon{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin: 0 auto;
+    font-size: .75rem !important;
+    display: block !important;
+    position: relative;
+}
+
+.iconText-margin{
+    margin-bottom: 5px;
+}
+
+.fa-plus:before, .fa.fa-map-marker:before, 
+.fa-heart:before, .fa-question:before {
+    position: relative;
+    top: 5px;
+}
+
+.space{
+    margin: 18px;
+}
+
+#today-weather-img{
+    width: 60%;
+    height: 80px;
+    object-fit: contain;
+}
+
+.img-p{
+    padding: 10px;
+}
+
+#today-temp{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.icon_umbrella{
+    width: 30px;
+    height: 30px;
+}
+
+.todat-rainfall{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#locationSelect{
+    border-color: #999;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 1rem!important;
+}
+
+.locationSize{
+    font-size: 23px;
+}
