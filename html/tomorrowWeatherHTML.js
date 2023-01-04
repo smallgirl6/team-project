@@ -13,7 +13,7 @@ class TomorrowWeather extends HTMLElement{
                     <div id="tomorrowDayWeatherTemp" class="tomorrow-day-weather-temp"><!--明日白天溫度DIV-->></div>
                     <div class="tomorrow-day-rainfall">
                         <div class="tomorrow-day-rainfall-icon">
-                            <img src="/img/icon_umbrella.png" src="">
+                            <img src="img/icon_umbrella.png" src="">
                         </div>
                         <div id="tomorrowDayRainfallRate" class="tomorrow-day-rainfall-rate"><!--明日白天降雨量DIV--></div>
                     </div>
@@ -28,7 +28,7 @@ class TomorrowWeather extends HTMLElement{
                     <div id="tomorrowNightWeatherTemp" class="tomorrow-night-weather-temp"><!--明日晚上溫度DIV--></div>
                     <div class="tomorrow-night-rainfall">
                         <div class="tomorrow-night-rainfall-icon">
-                            <img src="/img/icon_umbrella.png">
+                            <img src="img/icon_umbrella.png">
                         </div>
                         <div id="tomorrowNightRainFallRate" class="tomorrow-night-rainfall-rate"><!--明日晚上降雨量DIV--></div>
                     </div>
