@@ -88,7 +88,7 @@ const view1 = {
             document.querySelector("#today-weather-img").src = dayWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[0].parameter.parameterName];
             
             // Temperature
-            document.querySelector("#today-temp").textContent = dataTemp.records.location[event.target.value].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[0].parameter.parameterName + " °C";
+            document.querySelector("#today-temp").textContent = dataTemp.records.location[event.target.value].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[event.target.value].weatherElement[4].time[0].parameter.parameterName + " °C";
         })
 
         // Set Default Value
