@@ -27,31 +27,31 @@ const view1 = {
         };
 
         const dayWeatherList = {
-            "陰時多雲": "/img/day_cloudy_shade.png",
-            "陰天": "/img/day_overcast.png",
-            "多雲": "/img/day_cloudy.png",
-            "晴時多雲": "/img/day_cloudy_sunny_period.png",
-            "陰短暫雨": "/img/day_short_rain_shade.png",
-            "多雲時陰": "/img/day_most_cloudy_shade.png",
-            "陰有雨": "/img/day_rain_shade.png",
-            "多雲時晴": "/img/day_cloudy_sunny.png",
-            "多雲短暫雨": "/img/day_short_rain_shade.png",
-            "陰時多雲有雨": "/img/day_short_rain_shade.png",
-            "陰時多雲短暫雨": "/img/day_short_rain_shade.png"
+            "陰時多雲": "img/day_cloudy_shade.png",
+            "陰天": "img/day_overcast.png",
+            "多雲": "img/day_cloudy.png",
+            "晴時多雲": "img/day_cloudy_sunny_period.png",
+            "陰短暫雨": "img/day_short_rain_shade.png",
+            "多雲時陰": "img/day_most_cloudy_shade.png",
+            "陰有雨": "img/day_rain_shade.png",
+            "多雲時晴": "img/day_cloudy_sunny.png",
+            "多雲短暫雨": "img/day_short_rain_shade.png",
+            "陰時多雲有雨": "img/day_short_rain_shade.png",
+            "陰時多雲短暫雨": "img/day_short_rain_shade.png"
         };
 
         const nightWeatherList = {
-            "陰時多雲": "/img/night_cloudy_shade.png",
-            "陰天": "/img/night_overcast.png",
-            "多雲": "/img/night_cloudy.png",
-            "晴時多雲": "/img/night_cloudy_sunny_period.png",
-            "陰短暫雨": "/img/night_short_rain_shade.png",
-            "多雲時陰": "/img/night_most_cloudy_shade.png",
-            "陰有雨": "/img/night_rain_shade.png",
-            "多雲時晴": "/img/night_cloudy_sunny.png",
-            "多雲短暫雨": "/img/day_short_rain_shade.png",
-            "陰時多雲有雨": "/img/day_short_rain_shade.png",
-            "陰時多雲短暫雨": "/img/day_short_rain_shade.png"
+            "陰時多雲": "img/night_cloudy_shade.png",
+            "陰天": "img/night_overcast.png",
+            "多雲": "img/night_cloudy.png",
+            "晴時多雲": "img/night_cloudy_sunny_period.png",
+            "陰短暫雨": "img/night_short_rain_shade.png",
+            "多雲時陰": "img/night_most_cloudy_shade.png",
+            "陰有雨": "img/night_rain_shade.png",
+            "多雲時晴": "img/night_cloudy_sunny.png",
+            "多雲短暫雨": "img/day_short_rain_shade.png",
+            "陰時多雲有雨": "img/day_short_rain_shade.png",
+            "陰時多雲短暫雨": "img/day_short_rain_shade.png"
         };
         // Set Date, Description and Time Range
         let date = new Date();
