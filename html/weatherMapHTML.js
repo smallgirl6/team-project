@@ -3,16 +3,7 @@
 class WeatherMap extends HTMLElement{
 
     connectedCallback(){
-        this.innerHTML = `<!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>weather-map</title>
-            <link rel="stylesheet" type="text/css" href="../css/weatherMap.css" >
-        </head>
-        <body>
+        this.innerHTML = `
             <div class ="weather">
                 <div id ="app">
                     <div class="title_area">
@@ -301,11 +292,6 @@ class WeatherMap extends HTMLElement{
                     </svg>
                 </div>
             </div>
-          <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>   
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-          <script type="text/javascript" src="..js/weatherMap.js"></script>
-        </body>
-        </html>
         `;
     };
     

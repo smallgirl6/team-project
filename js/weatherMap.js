@@ -252,5 +252,3 @@ var place_data=[
         console.log(allData)
         let topLeft=window.document.get
     })
-  
-  
