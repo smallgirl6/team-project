@@ -1,1 +1,75 @@
 /* 請俐蓉負責這個文件 */
+
+#div-uv-index {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    background-color: #1a67b1;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    font-size: .875rem;
+    text-align: left;
+}
+
+#dropdown-station-name{
+    margin-top: 20px;
+}
+
+#select-station-names select {
+    font-size: .875rem;
+}
+
+
+
+
+
+#icon-and-bar{
+    white-space:nowrap;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+
+#uv-index-emoji{
+    display: inline-block;
+    justify-content: space-between;
+    font-size: 50px;
+    vertical-align: -10px;
+    margin: 0 10px 0 0;
+
+}
+
+#uv-index-bar{
+    display: inline-block;
+  vertical-align: middle;
+
+}
+
+progress {
+    width: 220px;
+    height: 40px;
+    text-align: right;
+    background-color: white;
+}
+
+progress:after {
+    content: attr(value);
+    color: white;
+}
+
+/* background: */
+progress::-webkit-progress-bar {
+    background-color: white;
+    width: 100%;
+}
+
+
+progress::-webkit-progress-value { background: skyblue !important; }
+
+
+#uv-index-datatime {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
