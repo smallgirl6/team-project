@@ -38,6 +38,13 @@
     margin: 15px;
 }
 
+.tomorrow-day-weather-icon,
+.tomorrow-night-weather-icon {
+    width: 60%;
+    height: 80px;
+    object-fit: contain;
+}
+
 .tomorrow-day-weather-temp,
 .tomorrow-night-weather-temp {
     font-size: 20px;
@@ -56,6 +63,7 @@
     flex: auto;
     width: 30%;
     margin: 13px 5px 5px 5px;
+    transform: translateX(8px);
 }
 
 .tomorrow-day-rainfall-icon > img,
@@ -70,16 +78,4 @@
     width: 70%;
     margin: 5px;
     text-align: left;
-}
-
-.tomorrow-day-weather-icon {
-    width: 60%;
-    height: 80px;
-    object-fit: contain;
-}
-
-.tomorrow-night-weather-icon {
-    width: 60%;
-    height: 80px;
-    object-fit: contain;
 }
