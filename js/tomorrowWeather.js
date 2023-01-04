@@ -19,32 +19,34 @@ const model = {
 const view = {
     render: function(dataTemp, dataRainfall){
         const dayWeatherList = {
-            "陰時多雲": "/img/day_cloudy_shade.png",
-            "陰天": "/img/day_overcast.png",
-            "多雲": "/img/day_cloudy.png",
-            "晴時多雲": "/img/day_cloudy_sunny_period.png",
-            "陰短暫雨": "/img/day_short_rain_shade.png",
-            "多雲時陰": "/img/day_most_cloudy_shade.png",
-            "陰有雨": "/img/day_rain_shade.png",
-            "多雲時晴": "/img/day_cloudy_sunny.png"
+            "陰時多雲": "img/day_cloudy_shade.png",
+            "陰天": "img/day_overcast.png",
+            "多雲": "img/day_cloudy.png",
+            "晴時多雲": "img/day_cloudy_sunny_period.png",
+            "陰短暫雨": "img/day_short_rain_shade.png",
+            "多雲時陰": "img/day_most_cloudy_shade.png",
+            "陰有雨": "img/day_rain_shade.png",
+            "多雲時晴": "img/day_cloudy_sunny.png"
         };
 
         const nightWeatherList = {
-            "陰時多雲": "/img/night_cloudy_shade.png",
-            "陰天": "/img/night_overcast.png",
-            "多雲": "/img/night_cloudy.png",
-            "晴時多雲": "/img/night_cloudy_sunny_period.png",
-            "陰短暫雨": "/img/night_short_rain_shade.png",
-            "多雲時陰": "/img/night_most_cloudy_shade.png",
-            "陰有雨": "/img/night_rain_shade.png",
-            "多雲時晴": "/img/night_cloudy_sunny.png"
+            "陰時多雲": "img/night_cloudy_shade.png",
+            "陰天": "img/night_overcast.png",
+            "多雲": "img/night_cloudy.png",
+            "晴時多雲": "img/night_cloudy_sunny_period.png",
+            "陰短暫雨": "img/night_short_rain_shade.png",
+            "多雲時陰": "img/night_most_cloudy_shade.png",
+            "陰有雨": "img/night_rain_shade.png",
+            "多雲時晴": "img/night_cloudy_sunny.png"
         };
 
         // Display the content
         document.querySelector("#tomorrowDayWeather").style.opacity = "1";
         document.querySelector("#tomorrowNightWeather").style.opacity = "1";
     
-        // Weather Icon
+        // Weather text and Icon
+        document.querySelector("#tomorrowDayWeatherIcon").title = dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName;
+        document.querySelector("#tomorrowNightWeatherIcon").title = dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName;
         document.querySelector("#tomorrowDayWeatherIcon").src = dayWeatherList[dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName];
         document.querySelector("#tomorrowNightWeatherIcon").src = nightWeatherList[dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName];
         

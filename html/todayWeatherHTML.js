@@ -30,7 +30,7 @@ class TodayWeather extends HTMLElement{
                     <p id="today-time-range" class="space"></p>
                     <p class="img-p"><img id="today-weather-img"></p>
                     <p id="today-temp" class="space"></p>
-                    <p class="space todat-rainfall"><img class="icon_umbrella" src="/img/icon_umbrella.png">&ensp;<span id="today-rain"></span></p>
+                    <p class="space todat-rainfall"><img class="icon_umbrella" src="img/icon_umbrella.png">&ensp;<span id="today-rain"></span></p>
                 </div>
             </div>
         `;
