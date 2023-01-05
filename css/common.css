@@ -54,7 +54,7 @@ body {
 
 .forecast {
 	flex: auto;
-	width: 55%;
+	width: 50%;
 }
 
 .weather-main {
@@ -90,7 +90,7 @@ body {
 	width: 40%;
 }
 
-@media(max-width:1200px) {
+@media(max-width:1250px) {
 
 	.outer-container {
 		margin: 20px 50px 50px 50px;
