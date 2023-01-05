@@ -194,7 +194,7 @@ for(let i=0; i< 23; i++){
     let dataName = stnunmber.getAttribute('data-name');
     $.each(place_data, function(index, value) {
         if (value.tag == dataName) {
-            console.log(value.tag + ":"+ value.weather);
+            // console.log(value.tag + ":"+ value.weather); 
             if (value.weather=="Rainy"){
                 stnunmber.style.fill="url(#rain)";
             }

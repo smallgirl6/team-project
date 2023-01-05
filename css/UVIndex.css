@@ -1,16 +1,22 @@
 #div-uv-index {
     width: auto;
-    height: 200px;
+    height: 145px;
     position: relative;
     background-color: #1a67b1;
     border-radius: 10px;
     color: white;
-    padding: 20px;
+    padding: 30px;
     font-size: .875rem;
     text-align: left;
+    margin-top: 5px;
 }
 
-#dropdown-station-name{
+#div-uv-index:hover {
+    background-color: #045bac;
+    transition: background-color .2s linear, border-color .1s linear;
+}
+
+#dropdown-station-name {
     margin-top: 20px;
 }
 
@@ -18,30 +24,23 @@
     font-size: .875rem;
 }
 
-
-
-
-
-#icon-and-bar{
+#icon-and-bar {
     white-space:nowrap;
     justify-content: space-between;
-    margin-top: 30px;
-
+    margin-top: 10px;
 }
 
-#uv-index-emoji{
+#uv-index-emoji {
     display: inline-block;
     justify-content: space-between;
     font-size: 50px;
     vertical-align: -10px;
     margin: 0 10px 0 0;
-
 }
 
-#uv-index-bar{
+#uv-index-bar {
     display: inline-block;
-  vertical-align: middle;
-
+    vertical-align: middle;
 }
 
 progress {
@@ -49,6 +48,7 @@ progress {
     height: 40px;
     text-align: right;
     background-color: white;
+    border-radius: 5px;
 }
 
 progress:after {
@@ -62,12 +62,16 @@ progress::-webkit-progress-bar {
     width: 100%;
 }
 
-
-progress::-webkit-progress-value { background: skyblue !important; }
-
+progress::-webkit-progress-value {
+    background: rgb(143, 235, 135) !important;
+}
 
 #uv-index-datatime {
     position: absolute;
     bottom: 20px;
     right: 20px;
+}
+
+p, label {
+    font-size: 16px;
 }

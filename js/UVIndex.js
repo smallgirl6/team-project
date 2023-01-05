@@ -22,17 +22,19 @@ const modelUV = {
 const viewUV = {
     render: function (ultraVioletData, stationData) {
 
+        document.querySelector("#UVIndexContent").style.opacity = "1";
+
         let stationList = [];
         let master = [];
 
 
-        console.log(ultraVioletData)
+        // console.log(ultraVioletData)
 
         let stations = stationData['records']['data']['stationStatus']['station']
         for (let i = 0; i < stations.length; i++) {
             stationList.push({ 'stationID': stations[i]['StationID'], 'stationName': stations[i]['StationName'] });
         }
-        console.log(stationList)
+        // console.log(stationList)
 
         ultraVioletValue = ultraVioletData['records']['weatherElement']['location'];
         ultraVioletValue.forEach((element) => {
@@ -45,8 +47,8 @@ const viewUV = {
             }
         });
 
-        console.log(stationList)
-        console.log(master)
+        // console.log(stationList)
+        // console.log(master)
 
 
         master.forEach((element) => {

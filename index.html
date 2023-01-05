@@ -43,17 +43,6 @@
 			<div class="weather-map">
 				<!-- 地圖部份 -->
                 <div class ="weather">
-                    <!-- <div id ="app">
-                        <div class="title_area">
-                        <h1>Taiwan<br>Weather Map<br></h1>
-                        <hr />
-                            <div class="forcast" v-if="now_area">
-                                <h2>{{now_area.place}}</h2>
-                                <h4>低溫~高溫:{{now_area.low}}度~{{now_area.height}}度</h4>
-                                <h4>天氣:{{now_area.weather}}</h4>
-                            </div> 
-                        </div> 
-                    </div> -->
                     <div class="taiwan-map">
                         <?xml version="1.0" encoding="utf-8"?>
                         <!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -329,6 +318,17 @@
                         <polygon id="_x32_" class="st0" points="433.3,1000.7 433.3,1000.7 433.3,1000.7 "/>
                         </svg>
                     </div>
+                </div>
+                <div id ="app">
+                    <div class="title_area">
+                    <!-- <h1>Taiwan<br>Weather Map<br></h1> -->
+                    <!-- <hr /> -->
+                        <div class="forcast" v-if="now_area">
+                            <div>{{now_area.place}}</div>
+                            <div>低溫~高溫:{{now_area.low}}度~{{now_area.height}}度</div>
+                            <div>天氣:{{now_area.weather}}</div>
+                        </div> 
+                    </div> 
                 </div>
 				<!-- <weather-map></weather-map> -->
 			</div>

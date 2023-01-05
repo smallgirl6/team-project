@@ -42,8 +42,9 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 30px;
+	margin-top: 20px;
 	text-align: center;
+	padding: 10px;
 }
 
 .container {
@@ -86,6 +87,65 @@ body {
 
 .weather-map {
 	flex: auto;
-	width: 50%;
-	text-align: left;
+	width: 40%;
+}
+
+@media(max-width:1200px) {
+
+	.outer-container {
+		margin: 20px 50px 50px 50px;
+	}
+
+	.weather-main {
+		flex-wrap: wrap;
+	}
+
+	.today-weather {
+		width: 50%;
+	}
+	
+	.tomorrow-weather {
+		width: 50%;
+	}
+
+	.weather-map {
+		display: none;
+	}
+
+	.UV-index-Weather-Information {
+		flex-wrap: wrap;
+	}
+
+	.UV-index {
+		width: 50%;
+	}
+
+	.Weather-Information {
+		width: 50%;
+	}
+
+}
+
+@media(max-width:800px) {
+
+	.today-weather {
+		width: 90%;
+	}
+	
+	.tomorrow-weather {
+		width: 90%;
+	}
+
+	.UV-index-Weather-Information {
+		display: block;
+	}
+
+	.UV-index {
+		width: 100%;
+	}
+
+	.Weather-Information {
+		width: 100%;
+	}
+
 }

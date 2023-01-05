@@ -2,8 +2,8 @@
     box-sizing: border-box;
     display: flex;
     width: auto;
-    height: auto;
-    margin: 5px;
+    height: 320px;
+    margin: 5px 5px 5px 10px;
     border-radius: 10px;
     background-color: #1a67b1;
 }
@@ -78,4 +78,20 @@
     width: 70%;
     margin: 5px;
     text-align: left;
+}
+
+@media(max-width:1200px) {
+
+	.tomorrow-weather-container {
+		margin: 5px 0px 0px 5px;
+	}
+
+}
+
+@media(max-width:800px) {
+
+	.tomorrow-weather-container {
+		margin: 5px 0px 0px 0px;
+	}
+
 }

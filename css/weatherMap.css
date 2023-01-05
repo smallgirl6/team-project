@@ -1,50 +1,63 @@
   .weather{
     /* width: 1200px; */
   }
+
   .app {
     flex: auto;
     margin-left: 0;
-    color: #6495ed;
-    font-size: 30px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
   }
+
   .title_area {
     margin-left: 0;
-    color: #6495ed;
-    font-size: 30px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
   }
+
   .title_area hr {
     width: 150px;
     margin-left: 0;
     border: none;
-    border-bottom: solid 2px #6495ed;
+    border-bottom: solid 2px #fff;
   }
+
   h4 {
     margin: 0;
     margin-top: 10px;
   }
+
   h2 {
     margin-top: 20px;
   }
+
   .taiwan-map{
     flex: none;
   }
+
   svg {
-    height: 680px;
+    height: 570px;
   }
+
   g {
-    stroke: #023261;
-    fill: #f0ffff;
+    stroke: #054b85;
+    fill: #e6f8fc;
     cursor: pointer;
   }
+
   g:hover {
-    fill: #6495ed;
+    fill: #197ac9;
     transform: translate(-5px, -5px);
   }
+
 @media (max-width:1200px){
     .weather{
         width: 100%;
     }
 }
+
 @media (max-width:599px){
     .weather{
         display:block; 
