@@ -47,8 +47,7 @@ const viewUV = {
             }
         });
 
-        // console.log(stationList)
-        // console.log(master)
+
 
 
         master.forEach((element) => {
@@ -57,9 +56,42 @@ const viewUV = {
             dropdownStationName.insertAdjacentHTML("afterbegin", insertHtml);
         });
 
+        let uvIndexBar = document.querySelector("#uv-index-bar");
+        uvValue = master.find(e => e.stationName == "嘉義").uvValue;
+        insertHtml = `<progress id="uv-index-progress-bar" max="12" value="` + uvValue + `">  </progress>`
+        uvIndexBar.insertAdjacentHTML("afterbegin", insertHtml)
+        iconBarColor(uvValue);
+
+
+
+        function iconBarColor(uvValue) {
+
+            if (uvValue >= 0 && uvValue < 3) {
+                changeIconBarColor("green");
+
+            } else if (uvValue >= 3 && uvValue < 7) {
+                changeIconBarColor("yellow");
+
+            } else if (uvValue >= 7 && uvValue < 10) {
+                changeIconBarColor("red");
+
+            } else {
+                changeIconBarColor("purple");
+
+            };
+            function changeIconBarColor(color) {
+                let progress = document.querySelector("progress");
+                let uvIndexEmoji = document.querySelector("#uv-index-emoji");
+                uvIndexEmoji.style.color = color;
+                progress.style.setProperty("--c", color);
+
+            }
+        };
+
         let option = document.getElementById("select-station-names")
         option.addEventListener("change", async function () {
             stationName = this.value;
+
 
             master.forEach((e) => {
                 if (e.stationName == stationName) {
@@ -71,18 +103,9 @@ const viewUV = {
                     let uvIndexBar = document.querySelector("#uv-index-bar");
                     insertHtml = `<progress id="uv-index-progress-bar" max="12" value="` + uvValue + `">  </progress>`
                     uvIndexBar.insertAdjacentHTML("afterbegin", insertHtml)
-                    uvIndexEmoji = document.querySelector("#uv-index-emoji");
+                    iconBarColor(uvValue);
 
-                    if (uvValue >= 0 && uvValue < 3) {
-                        uvIndexEmoji.style.color = "#00F500";
-                    } else if (uvValue >= 3 && uvValue < 7) {
-                        uvIndexEmoji.style.color = "yellow";
-                    } else if (uvValue >= 7 && uvValue < 10) {
-                        uvIndexEmoji.style.color = "red";
-                    } else {
-                        uvIndexEmoji.style.color = "purple";
 
-                    }
                 }
             })
 

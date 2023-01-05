@@ -68,7 +68,7 @@ const view1 = {
         if(date.getHours() >= 0 && date.getHours() < 6){
             document.querySelector("#today-desc").textContent = moment.TN.Desc;
             document.querySelector("#today-time-range").textContent =  moment.TN["6HrsTimeRange"];
-        }else if(date.getHours() && date.getHours() < 18){
+        }else if(date.getHours()>=6 && date.getHours() < 18){
             document.querySelector("#today-desc").textContent = moment.TD.Desc;
             if(date.getHours() >= 12)
                 document.querySelector("#today-time-range").textContent =  moment.TD["6HrsTimeRange"];
@@ -101,6 +101,8 @@ const view1 = {
             // Temperature
             document.querySelector("#today-temp").textContent = dataTemp.records.location[event.target.value].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[event.target.value].weatherElement[4].time[0].parameter.parameterName + " °C";
 
+            // Rainfall
+            document.querySelector("#today-rain").textContent = dataTemp.records.location[event.target.value].weatherElement[1].time[0].parameter.parameterName + " %";
 
             // KM SIU 部份 (天氣第二格和第三格)
             // Weather Icon
@@ -128,8 +130,8 @@ const view1 = {
             document.querySelector("#tomorrowNightWeatherTemp").textContent = dataTemp.records.location[event.target.value].weatherElement[2].time[2].parameter.parameterName + " °C - " + dataTemp.records.location[event.target.value].weatherElement[4].time[2].parameter.parameterName + " °C";    
 
             // Rainfall
-            // document.querySelector("#tomorrowDayRainfallRate").textContent = dataRainfall.records.location[4].weatherElement[6].elementValue + " mm";
-            // document.querySelector("#tomorrowNightRainFallRate").textContent = dataRainfall.records.location[4].weatherElement[6].elementValue + " mm";
+            document.querySelector("#tomorrowDayRainfallRate").textContent = dataTemp.records.location[event.target.value].weatherElement[1].time[1].parameter.parameterName + " %";
+            document.querySelector("#tomorrowNightRainFallRate").textContent = dataTemp.records.location[event.target.value].weatherElement[1].time[2].parameter.parameterName + " %";
 
         })
 
@@ -147,7 +149,7 @@ const view1 = {
         document.querySelector("#today-temp").textContent = dataTemp.records.location[0].weatherElement[2].time[0].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[0].parameter.parameterName + " °C";
     
         // Rainfall
-        document.querySelector("#today-rain").textContent = dataRainfall.records.location[4].weatherElement[6].elementValue + " mm";
+        document.querySelector("#today-rain").textContent = dataTemp.records.location[0].weatherElement[1].time[0].parameter.parameterName + " %";
     }
 };
 

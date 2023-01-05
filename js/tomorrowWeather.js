@@ -98,8 +98,8 @@ const view = {
         document.querySelector("#tomorrowNightWeatherTemp").textContent = dataTemp.records.location[0].weatherElement[2].time[2].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[2].parameter.parameterName + " °C";
     
         // Rainfall on Web Initial Load (嘉義)
-        document.querySelector("#tomorrowDayRainfallRate").textContent = dataRainfall.records.location[4].weatherElement[6].elementValue + " mm";
-        document.querySelector("#tomorrowNightRainFallRate").textContent = dataRainfall.records.location[4].weatherElement[6].elementValue + " mm";
+        document.querySelector("#tomorrowDayRainfallRate").textContent = dataTemp.records.location[0].weatherElement[1].time[1].parameter.parameterName + " %";
+        document.querySelector("#tomorrowNightRainFallRate").textContent = dataTemp.records.location[0].weatherElement[1].time[2].parameter.parameterName + " %";
     }
 };
 
