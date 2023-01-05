@@ -61,9 +61,9 @@
 .tomorrow-day-rainfall-icon,
 .tomorrow-night-rainfall-icon {
     flex: auto;
-    width: 30%;
+    width: 50%;
     margin: 13px 5px 5px 5px;
-    transform: translateX(8px);
+    text-align: right;
 }
 
 .tomorrow-day-rainfall-icon > img,
@@ -75,7 +75,7 @@
 .tomorrow-day-rainfall-rate,
 .tomorrow-night-rainfall-rate {
     flex: auto;
-    width: 70%;
+    width: 50%;
     margin: 5px;
     text-align: left;
 }

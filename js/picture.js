@@ -1,10 +1,10 @@
 console.log("eeee")
 let count=0
 const pictureList={
-    "0":"/img/ad1.jpg",
-    "1":"/img/ad2.jpg",
-    "2":"/img/ad3.jpg",
-    "3":"/img/ad4.jpg",
+    "0":"img/ad1.jpg",
+    "1":"img/ad2.jpg",
+    "2":"img/ad3.jpg",
+    "3":"img/ad4.jpg",
 }
 let pictureNumber=Object.keys(pictureList).length
 document.getElementById("leftButton").addEventListener("click",clickLeftButton)
