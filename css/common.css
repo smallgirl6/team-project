@@ -29,15 +29,20 @@ html {
 
 /* Main Content */
 body {
-	font-family: "微軟正黑體", "思源黑體", Roboto, sans-serif;
 	background-color: #3c8fd1;
 	color: #fff;
+	font-family: "微軟正黑體", "思源黑體", Roboto, sans-serif;
+	background-image: url("/img/background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0px 600px;
 }
 
 .outer-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: 30px;
 	text-align: center;
 }
 
@@ -48,10 +53,10 @@ body {
 
 .forecast {
 	flex: auto;
-	width: 50%;
+	width: 60%;
 }
 
-.weather {
+.weather-main {
 	display: flex;
 }
 
@@ -68,4 +73,5 @@ body {
 .weather-map {
 	flex: auto;
 	width: 50%;
+	text-align: left;
 }

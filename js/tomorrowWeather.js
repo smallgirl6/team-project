@@ -6,8 +6,8 @@ const model = {
             return data;
         };
         
-        const weatherDataTempPromise = getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-25142137-EFE4-4F9E-9B46-D41BF5BD73D5");
-        const weatherDataRainfallPromise = getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0002-001?Authorization=CWB-25142137-EFE4-4F9E-9B46-D41BF5BD73D5");
+        const weatherDataTempPromise = getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-DF2CB80E-CB70-453A-B35E-80356742388A");
+        const weatherDataRainfallPromise = getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0002-001?Authorization=CWB-DF2CB80E-CB70-453A-B35E-80356742388A");
         
         Promise.all([weatherDataTempPromise, weatherDataRainfallPromise])
         .then(([dataTemp, dataRainfall]) => {

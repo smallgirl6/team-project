@@ -1,17 +1,5 @@
-/* 請(1)Nina和(2)緯宸負責這個文件。為避免文件有衝突，請你們只有其中一位發PR給我 */
-* {
-    font-family: "Fjalla One";
-  }
-  body {
-    /* background-color: translate; */
-    background-image:
-      url(../paper_clouds.jpg);
-  }
   .weather{
-    width: 1200px;
-    display:flex; 
-    margin-right: auto;
-    margin-left:  auto;
+    /* width: 1200px; */
   }
   .app {
     flex: auto;
@@ -41,10 +29,10 @@
     flex: none;
   }
   svg {
-    height: 100vh;
+    height: 680px;
   }
   g {
-    stroke: #1e90ff;
+    stroke: #023261;
     fill: #f0ffff;
     cursor: pointer;
   }
@@ -62,3 +50,4 @@
         display:block; 
     }
 }
+  
