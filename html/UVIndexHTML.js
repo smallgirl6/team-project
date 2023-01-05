@@ -12,14 +12,12 @@ class UVIndex extends HTMLElement {
                     <div id="dropdown-station-name">
                         <label for="station-names">選擇測站：</label>
                         <select name="station-names" id="select-station-names">
-                        <option value="">請選擇</option>
                         </select>
                     </div>
 
                     <div id="icon-and-bar">
                         <div id="uv-index-emoji">&#9728</div>
                         <div id="uv-index-bar">
-                            <progress id="uv-index-progress-bar" max="12" value="0">  </progress>
                         </div>
                     </div>
 
