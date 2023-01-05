@@ -47,7 +47,6 @@ progress {
     width: 220px;
     height: 40px;
     text-align: right;
-    background-color: white;
     border-radius: 5px;
 }
 
@@ -63,7 +62,8 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-    background: rgb(143, 235, 135) !important;
+    background-color: var(--c,red);
+
 }
 
 #uv-index-datatime {
