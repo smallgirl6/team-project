@@ -22,25 +22,22 @@ function generateInit(){
 }
 function generateDot(number,element){
     for(let i=0;i<number;i++){
+        dotName="dot"+String(i)
+        let dot=document.createElement("img")
+        dot.setAttribute("class","dot")
         if(i==0){
-            dotName="dot"+String(i)
-            let dot=document.createElement("img")
-            dot.src="img/blackDot.png"
-            dot.setAttribute("id",dotName)
-            element.appendChild(dot)
+            dot.src="img/blackCircle.png"
         }else{
-            dotName="dot"+String(i)
-            let dot=document.createElement("img")
-            dot.src="img/whiteDot.png"
-            dot.setAttribute("id",dotName)
-            element.appendChild(dot)
+            dot.src="img/whiteCircle.png"
         }
+        dot.setAttribute("id",dotName)
+        element.appendChild(dot)
     }
 }
 function clickRightButton(){
     let tempDotName="dot"+String(count)
     let nowDot=document.getElementById(tempDotName)
-    nowDot.src="img/whiteDot.png"
+    nowDot.src="img/whiteCircle.png"
     if(count+1==pictureNumber){
         count=0
     }else{
@@ -48,7 +45,7 @@ function clickRightButton(){
     }
     let nextDotName="dot"+String(count)
     let nextDot=document.getElementById(nextDotName)
-    nextDot.src="img/blackDot.png"
+    nextDot.src="img/blackCircle.png"
     let layout=document.getElementById("layout")
     url="url("+pictureList[count]+")"
     layout.style.backgroundImage=url
@@ -59,7 +56,7 @@ function clickLeftButton(){
     console.log("left")
     let tempDotName="dot"+String(count)
     let nowDot=document.getElementById(tempDotName)
-    nowDot.src="img/whiteDot.png"
+    nowDot.src="img/whiteCircle.png"
     if(count==0){
         count=pictureNumber-1
     }else{
@@ -67,7 +64,7 @@ function clickLeftButton(){
     }
     let nextDotName="dot"+String(count)
     let nextDot=document.getElementById(nextDotName)
-    nextDot.src="img/blackDot.png"
+    nextDot.src="img/blackCircle.png"
     let layout=document.getElementById("layout")
     url="url("+pictureList[count]+")"
     layout.style.backgroundImage=url 
