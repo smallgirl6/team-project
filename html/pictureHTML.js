@@ -8,7 +8,9 @@ class pictures extends HTMLElement{
                 <div id="layout" class="layout">
                     <div class="split3">
                         <div id="leftButton" class="leftButton">
-                            <img class="right" src="img/left.png">
+
+                            <img class="right" src="img/btn_leftArrow.png">
+
                         </div>
 
                         <div class="middle">
@@ -21,7 +23,9 @@ class pictures extends HTMLElement{
                             </div>
                         </div>
                         <div id="rightButton" class="rightButton">
-                            <img class="right" src="img/right.png">
+                        
+                            <img class="right" src="img/btn_rightArrow.png">
+
                         </div>
                     </div>
                     
