@@ -1,7 +1,6 @@
-// // 請俐蓉負責這個文件
-const CWB_API_KEY = "CWB-B37454BB-118F-4B9D-A0E7-99FE16FF324A";
+const CWB_API_KEY = "CWB-DF2CB80E-CB70-453A-B35E-80356742388A";
 
-const model = {
+const modelUV = {
     constructor: function () {
         async function getData(url) {
             const response = await fetch(url);
@@ -14,13 +13,13 @@ const model = {
 
         Promise.all([ultraVioletData, stationData])
             .then(([ultraVioletData, stationData]) => {
-                view.render(ultraVioletData, stationData);
+                viewUV.render(ultraVioletData, stationData);
             });
     }
 };
 
 
-const view = {
+const viewUV = {
     render: function (ultraVioletData, stationData) {
 
         let stationList = [];
@@ -92,9 +91,9 @@ const view = {
     }
 }
 
-const control = {
+const controlUV = {
     constructor: function () {
-        model.constructor();
+        modelUV.constructor();
     }
 };
-control.constructor();
+controlUV.constructor();

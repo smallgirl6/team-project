@@ -32,10 +32,10 @@ body {
 	background-color: #3c8fd1;
 	color: #fff;
 	font-family: "微軟正黑體", "思源黑體", Roboto, sans-serif;
-	background-image: url("/img/background.png");
+	background-image: url("img/background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 0px 600px;
+	background-position: 0px 530px;
 }
 
 .outer-container {
@@ -66,6 +66,20 @@ body {
 }
 
 .tomorrow-weather {
+	flex: auto;
+	width: 50%;
+}
+
+.UV-index-Weather-Information {
+	display: flex;
+}
+
+.UV-index {
+	flex: auto;
+	width: 50%;
+}
+
+.Weather-Information {
 	flex: auto;
 	width: 50%;
 }
