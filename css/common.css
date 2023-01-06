@@ -52,37 +52,18 @@ body {
 	width: 1500px;
 }
 
-.forecast {
-	flex: auto;
-	width: 50%;
-}
-
-.weather-main {
-	display: flex;
-}
-
-.today-weather {
-	flex: auto;
-	width: 50%;
-}
-
-.tomorrow-weather {
-	flex: auto;
-	width: 50%;
-}
-
-.UV-index-Weather-Information {
-	display: flex;
-}
-
-.UV-index {
-	flex: auto;
-	width: 50%;
-}
-
+.forecast,
+.today-weather,
+.tomorrow-weather,
+.UV-index,
 .Weather-Information {
 	flex: auto;
 	width: 50%;
+}
+
+.weather-main,
+.UV-index-Weather-Information {
+	display: flex;
 }
 
 .weather-map {
@@ -96,32 +77,31 @@ body {
 		margin: 30px 50px 50px 50px;
 	}
 
-	.weather-main {
-		flex-wrap: wrap;
-	}
-
-	.today-weather {
-		width: 50%;
-	}
-	
-	.tomorrow-weather {
-		width: 50%;
-	}
-
-	.weather-map {
-		display: none;
-	}
-
+	.weather-main,
+	.container,
 	.UV-index-Weather-Information {
 		flex-wrap: wrap;
 	}
 
-	.UV-index {
+	.today-weather,
+	.tomorrow-weather,
+	.UV-index,
+	.Weather-Information {
 		width: 50%;
 	}
 
-	.Weather-Information {
-		width: 50%;
+	.forecast {
+		width: 90%;
+	}
+
+	.weather-map {
+		width: 90%;
+		margin-top: 30px;
+	}
+
+	body {
+		background-position: 0px 1200px;
+		background-size: cover;
 	}
 
 }

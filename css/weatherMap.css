@@ -48,3 +48,11 @@ g:hover {
   transform: translate(-5px, -5px);
   fill: #197ac9;
 }
+
+@media(max-width:800px) {
+
+  svg {
+    height: 450px;
+  }
+
+}

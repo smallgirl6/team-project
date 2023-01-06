@@ -283,7 +283,7 @@ fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
           stnunmber.style.fill="url(#cloudy&moon4)";
         }
         else if (value.weathernum>4 && value.weathernum < 8){
-          console.log(value.weathernum)
+          // console.log(value.weathernum)
             stnunmber.style.fill="url(#cloudy5)";
         }
         else if (value.weathernum>7 && value.weathernum < 15 ){  
