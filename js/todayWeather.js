@@ -1,4 +1,3 @@
-// 請Yan負責這個文件
 const model1 = {
     constructor: function(){
         async function getWeatherData(url){

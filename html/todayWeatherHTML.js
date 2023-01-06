@@ -1,5 +1,3 @@
-// 請Yan負責這個文件
-
 class TodayWeather extends HTMLElement{
 
     connectedCallback(){

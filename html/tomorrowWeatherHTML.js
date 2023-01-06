@@ -3,7 +3,6 @@ class TomorrowWeather extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
             <div class="tomorrow-weather-container">
-
                 <!--明日白天-->
                 <div id="tomorrowDayWeather" class="tomorrow-day-weather border">
                     <div id="tomorrowDayWeatherTitle" class="tomorrow-day-weather-title"></div>
@@ -35,7 +34,6 @@ class TomorrowWeather extends HTMLElement{
                         <div id="tomorrowNightRainFallRate" class="tomorrow-night-rainfall-rate"><!--明日晚上降雨量DIV--></div>
                     </div>
                 </div>
-
             </div>
         `;
     };

@@ -18,7 +18,6 @@ const modelUV = {
     }
 };
 
-
 const viewUV = {
     render: function (ultraVioletData, stationData) {
 
@@ -26,7 +25,6 @@ const viewUV = {
 
         let stationList = [];
         let master = [];
-
 
         // console.log(ultraVioletData)
 
@@ -47,9 +45,6 @@ const viewUV = {
             }
         });
 
-
-
-
         master.forEach((element) => {
             insertHtml = `<option value="` + element.stationName + `">` + element.stationName + `</option>`;
             dropdownStationName = document.querySelector("#select-station-names");
@@ -61,8 +56,6 @@ const viewUV = {
         insertHtml = `<progress id="uv-index-progress-bar" max="12" value="` + uvValue + `">  </progress>`
         uvIndexBar.insertAdjacentHTML("afterbegin", insertHtml)
         iconBarColor(uvValue);
-
-
 
         function iconBarColor(uvValue) {
 
@@ -92,7 +85,6 @@ const viewUV = {
         option.addEventListener("change", async function () {
             stationName = this.value;
 
-
             master.forEach((e) => {
                 if (e.stationName == stationName) {
                     uvValue = e.uvValue;
@@ -105,13 +97,10 @@ const viewUV = {
                     uvIndexBar.insertAdjacentHTML("afterbegin", insertHtml)
                     iconBarColor(uvValue);
 
-
                 }
             })
 
         });
-
-
 
     }
 }

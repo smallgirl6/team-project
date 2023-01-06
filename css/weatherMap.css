@@ -7,8 +7,8 @@
 }
 
 .title_area {
-  margin-left: 0;
   margin-top: 20px;
+  margin-left: 0;
   color: #fff;
   font-size: 25px;
   font-weight: bold;
@@ -39,24 +39,12 @@ svg {
 }
 
 g {
+  cursor: pointer;
   stroke: #054b85;
   fill: #e6f8fc;
-  cursor: pointer;
 }
 
 g:hover {
-  fill: #197ac9;
   transform: translate(-5px, -5px);
-}
-
-@media (max-width:1200px){
-  .weather{
-      width: 100%;
-  }
-}
-
-@media (max-width:599px){
-  .weather{
-      display:block; 
-  }
+  fill: #197ac9;
 }

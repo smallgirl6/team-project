@@ -1,6 +1,3 @@
-// 請俐蓉負責這個文件
-
-
 class UVIndex extends HTMLElement {
 
     connectedCallback() {

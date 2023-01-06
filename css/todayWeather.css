@@ -1,11 +1,10 @@
-/* 請Yan負責這個文件 */
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
-    background-color: #1a67b1;
-    border-radius: 10px;
     height: 320px;
     margin-top: 5px;
+    border-radius: 10px;
+    background-color: #1a67b1;
 }
 
 .grid-container:hover {
@@ -28,19 +27,19 @@
 }
 
 .fa{
-    color: #1a67b1;
     background-color: #fff;
     box-shadow: 0 0 7px 2px #fff;
+    color: #1a67b1;
 }
 
 .icon{
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    margin: 0 auto;
-    font-size: .75rem !important;
     display: block !important;
     position: relative;
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: .75rem !important;
 }
 
 .iconText-margin{
@@ -53,42 +52,42 @@
     top: 5px;
 }
 
-.space{
+.space {
     margin: 18px;
 }
 
-#today-weather-img{
+#today-weather-img {
     width: 60%;
     height: 80px;
     object-fit: contain;
 }
 
-.img-p{
+.img-p {
     padding: 10px;
 }
 
-#today-temp{
-    font-size: 20px;
+#today-temp {
     padding: 5px;
+    font-size: 20px;
 }
 
-.icon_umbrella{
+.icon_umbrella {
     width: 30px;
     height: 30px;
     margin-top: 4px;
 }
 
-.todat-rainfall{    
+.todat-rainfall {    
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-#locationSelect{
-    border-color: #999;
+#locationSelect {
     height: 32px;
     padding: 0 10px;
     border-radius: 5px;
+    border-color: #999;
     font-size: 1rem!important;
 }
 

@@ -6,6 +6,7 @@ const pictureList={
     "2":"img/ad3.jpg",
     "3":"img/ad4.jpg",
 }
+
 let pictureNumber=Object.keys(pictureList).length
 document.getElementById("leftButton").addEventListener("click",clickLeftButton)
 document.getElementById("rightButton").addEventListener("click",clickRightButton)
@@ -20,6 +21,7 @@ function generateInit(){
     // console.log(number)
     generateDot(number,dotCount)
 }
+
 function generateDot(number,element){
     for(let i=0;i<number;i++){
         dotName="dot"+String(i)
@@ -34,6 +36,7 @@ function generateDot(number,element){
         element.appendChild(dot)
     }
 }
+
 function clickRightButton(){
     let tempDotName="dot"+String(count)
     let nowDot=document.getElementById(tempDotName)
@@ -49,7 +52,6 @@ function clickRightButton(){
     let layout=document.getElementById("layout")
     url="url("+pictureList[count]+")"
     layout.style.backgroundImage=url
-     
 }
 
 function clickLeftButton(){
