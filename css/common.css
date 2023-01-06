@@ -29,16 +29,22 @@ html {
 
 /* Main Content */
 body {
-	font-family: "微軟正黑體", "思源黑體", Roboto, sans-serif;
 	background-color: #3c8fd1;
 	color: #fff;
+	font-family: "微軟正黑體", "思源黑體", Roboto, sans-serif;
+	background-image: url("https://skwongman.github.io/team-project/img/background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0px 530px;
 }
 
 .outer-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: 20px;
 	text-align: center;
+	padding: 10px;
 }
 
 .container {
@@ -51,7 +57,7 @@ body {
 	width: 50%;
 }
 
-.weather {
+.weather-main {
 	display: flex;
 }
 
@@ -65,7 +71,81 @@ body {
 	width: 50%;
 }
 
-.weather-map {
+.UV-index-Weather-Information {
+	display: flex;
+}
+
+.UV-index {
 	flex: auto;
 	width: 50%;
+}
+
+.Weather-Information {
+	flex: auto;
+	width: 50%;
+}
+
+.weather-map {
+	flex: auto;
+	width: 40%;
+}
+
+@media(max-width:1250px) {
+
+	.outer-container {
+		margin: 20px 50px 50px 50px;
+	}
+
+	.weather-main {
+		flex-wrap: wrap;
+	}
+
+	.today-weather {
+		width: 50%;
+	}
+	
+	.tomorrow-weather {
+		width: 50%;
+	}
+
+	.weather-map {
+		display: none;
+	}
+
+	.UV-index-Weather-Information {
+		flex-wrap: wrap;
+	}
+
+	.UV-index {
+		width: 50%;
+	}
+
+	.Weather-Information {
+		width: 50%;
+	}
+
+}
+
+@media(max-width:800px) {
+
+	.today-weather {
+		width: 90%;
+	}
+	
+	.tomorrow-weather {
+		width: 90%;
+	}
+
+	.UV-index-Weather-Information {
+		display: block;
+	}
+
+	.UV-index {
+		width: 100%;
+	}
+
+	.Weather-Information {
+		width: 100%;
+	}
+
 }

@@ -4,9 +4,10 @@ class TomorrowWeather extends HTMLElement{
         this.innerHTML = `
             <div class="tomorrow-weather-container">
 
+                <!--明日白天-->
                 <div id="tomorrowDayWeather" class="tomorrow-day-weather border">
-                    <div class="tomorrow-day-weather-title">明日白天</div>
-                    <div class="tomorrow-day-weather-period">06:00 ~ 18:00</div>
+                    <div id="tomorrowDayWeatherTitle" class="tomorrow-day-weather-title"></div>
+                    <div id="tomorrowDayWeatherPeriod" class="tomorrow-day-weather-period"></div>
                     <div class="tomorrow-day-weather-icon-frame">
                         <img id="tomorrowDayWeatherIcon" class="tomorrow-day-weather-icon"><!--明日白天圖片-->
                     </div>
@@ -19,9 +20,10 @@ class TomorrowWeather extends HTMLElement{
                     </div>
                 </div>
 
+                <!--明日晚上-->
                 <div id="tomorrowNightWeather" class="tomorrow-night-weather">
-                    <div class="tomorrow-night-weather-title">明日晚上</div>
-                    <div class="tomorrow-night-weather-period">18:00 ~ 06:00</div>
+                    <div id="tomorrowNightWeatherTitle" class="tomorrow-night-weather-title"></div>
+                    <div id="tomorrowNightWeatherPeriod" class="tomorrow-night-weather-period"></div>
                     <div class="tomorrow-night-weather-icon-frame">
                         <img id="tomorrowNightWeatherIcon" class="tomorrow-night-weather-icon"><!--明日晚上圖片-->
                     </div>

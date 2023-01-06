@@ -2,8 +2,8 @@
     box-sizing: border-box;
     display: flex;
     width: auto;
-    height: auto;
-    margin: 5px;
+    height: 320px;
+    margin: 5px 5px 5px 10px;
     border-radius: 10px;
     background-color: #1a67b1;
 }
@@ -61,9 +61,9 @@
 .tomorrow-day-rainfall-icon,
 .tomorrow-night-rainfall-icon {
     flex: auto;
-    width: 30%;
+    width: 50%;
     margin: 13px 5px 5px 5px;
-    transform: translateX(8px);
+    text-align: right;
 }
 
 .tomorrow-day-rainfall-icon > img,
@@ -75,7 +75,23 @@
 .tomorrow-day-rainfall-rate,
 .tomorrow-night-rainfall-rate {
     flex: auto;
-    width: 70%;
+    width: 50%;
     margin: 5px;
     text-align: left;
+}
+
+@media(max-width:1250px) {
+
+	.tomorrow-weather-container {
+		margin: 5px 5px 5px 10px;
+	}
+
+}
+
+@media(max-width:800px) {
+
+	.tomorrow-weather-container {
+		margin: 5px 0px 0px 0px;
+	}
+
 }

@@ -1,4 +1,3 @@
-// 請(1)Nina和(2)緯宸負責這個文件。為避免文件有衝突，請你們只有其中一位發PR給我
 function isDayTime() {
   const date = new Date();
   const hours = date.getHours();

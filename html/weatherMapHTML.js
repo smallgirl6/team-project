@@ -1,10 +1,9 @@
-// 請(1)Nina和(2)緯宸負責這個文件。為避免文件有衝突，請你們只有其中一位發PR給我
-
 class WeatherMap extends HTMLElement{
 
     connectedCallback(){
         this.innerHTML = `
             <div class ="weather">
+
                 <div id ="app">
                     <div class="title_area">
                     <h1>Taiwan<br>Weather Map<br></h1>
@@ -16,12 +15,14 @@ class WeatherMap extends HTMLElement{
                         </div> 
                     </div> 
                 </div>
+
                 <div class="taiwan-map">
                     <?xml version="1.0" encoding="utf-8"?>
                     <!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                     <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                       y="0px" viewBox="0 0 1000 1295" width="300px"height="300px" style="enable-background:new 0 0 1000 1295;" xml:space="preserve">
+                        y="0px" viewBox="0 0 1000 1295" style="enable-background:new 0 0 1000 1295;" xml:space="preserve">
                     <defs>
+
                        <pattern id="sun1" class="img" x="0" y="0" width="100%" height="100%"  >
                            <image class="img" x="10" y="12" width="90px" height="90px" xlink:href=".\icon\01.svg" />
                        </pattern>
@@ -388,6 +389,18 @@ class WeatherMap extends HTMLElement{
                     <polygon id="_x32_" class="st0" points="433.3,1000.7 433.3,1000.7 433.3,1000.7 "/>
                     </svg>
                 </div>
+                
+                </div>
+                <div id ="app">
+                <div class="title_area">
+                <!-- <h1>Taiwan<br>Weather Map<br></h1> -->
+                <!-- <hr /> -->
+                    <div class="forcast" v-if="now_area">
+                        <div>{{now_area.place}}</div>
+                        <div>低溫~高溫:{{now_area.low}}度~{{now_area.height}}度</div>
+                        <div>天氣:{{now_area.weather}}</div>
+                    </div> 
+                </div> 
             </div>
         `;
     };

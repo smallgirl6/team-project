@@ -5,7 +5,7 @@ class TodayWeather extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
             <div class="grid-container">
-                <div class="grid-item">
+                <div id="gridItem1" class="grid-item">
                     <div class="space locationSize"><span id="location"></span><span id="date"></span></div>
                     <div class="icon-grid-container space">
                         <div class="icon-grid-item">
@@ -25,7 +25,7 @@ class TodayWeather extends HTMLElement{
                         <select id="locationSelect"></select>
                     </div>
                 </div>
-                <div class="grid-item">
+                <div id="gridItem2" class="grid-item">
                     <p id="today-desc" class="space"></p>
                     <p id="today-time-range" class="space"></p>
                     <p class="img-p"><img id="today-weather-img"></p>
