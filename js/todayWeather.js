@@ -103,17 +103,15 @@ const view1 = {
             // Rainfall
             document.querySelector("#today-rain").textContent = dataTemp.records.location[event.target.value].weatherElement[1].time[0].parameter.parameterName + " %";
 
-            // 明天天氣部份 (天氣第二格和第三格)
             
+            // Tomorrow's Weather Part
             // Weather Icon
-            // 天氣第二格
             if(dataTemp.records.location[event.target.value].weatherElement[0].time[1].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[event.target.value].weatherElement[0].time[1].endTime.split(" ").pop().split(":")[0] + ":00" == "06:00 ~ 18:00"){
                 document.querySelector("#tomorrowDayWeatherIcon").src = dayWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[1].parameter.parameterName];
             }
             else{
                 document.querySelector("#tomorrowDayWeatherIcon").src = nightWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[1].parameter.parameterName];
             };
-            // 天氣第三格
             if(dataTemp.records.location[event.target.value].weatherElement[0].time[2].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[event.target.value].weatherElement[0].time[2].endTime.split(" ").pop().split(":")[0] + ":00" == "06:00 ~ 18:00"){
                 document.querySelector("#tomorrowNightWeatherIcon").src = dayWeatherList[dataTemp.records.location[event.target.value].weatherElement[0].time[2].parameter.parameterName];
             }

@@ -4,8 +4,8 @@ const model = {
         
         async function getWeatherData(url){
             const response = await fetch(url);
-            const data = await response.json();
-            return data;
+            const dataTemp = await response.json();
+            return dataTemp;
         };
         
         getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=" + API_KEY)

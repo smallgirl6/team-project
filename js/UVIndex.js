@@ -25,14 +25,10 @@ const viewUV = {
 
         let stationList = [];
         let master = [];
-
-        // console.log(ultraVioletData)
-
         let stations = stationData['records']['data']['stationStatus']['station']
         for (let i = 0; i < stations.length; i++) {
             stationList.push({ 'stationID': stations[i]['StationID'], 'stationName': stations[i]['StationName'] });
         }
-        // console.log(stationList)
 
         ultraVioletValue = ultraVioletData['records']['weatherElement']['location'];
         ultraVioletValue.forEach((element) => {

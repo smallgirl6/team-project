@@ -1,4 +1,3 @@
-// console.log("eeee")
 let count=0
 const pictureList={
     "0":"img/ad2.jpg",
@@ -18,7 +17,6 @@ function generateInit(){
     layout.style.backgroundImage=url
     let dotCount=document.getElementById("dotCount")
     let number=Object.keys(pictureList).length
-    // console.log(number)
     generateDot(number,dotCount)
 }
 
@@ -55,7 +53,6 @@ function clickRightButton(){
 }
 
 function clickLeftButton(){
-    // console.log("left")
     let tempDotName="dot"+String(count)
     let nowDot=document.getElementById(tempDotName)
     nowDot.src="img/whiteCircle.png"
