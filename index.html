@@ -44,7 +44,7 @@
             <!-- 地圖部份 -->
 			<div class="weather-map">
                 <div class ="weather">
-                    <div class="taiwan-map">
+                    <div class="taiwan-map" id="taiwan-map">
                         <?xml version="1.0" encoding="utf-8"?>
                         <!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                         <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -186,8 +186,8 @@
                             l0.5-3l-19.9-51.6l-1.6-2.9l-5.5-6.8l-4.4-9.9l-2-2.8l-8.2-6.5l-5.4-3l-0.9-3.7l-0.7-1.3l-4.4-2.9l-10-4.8l-4.5-3.1l-4.8-4.2
                             l-2.6-1.6l8.1-20.5l-0.4-8.2l-2.7-7.5l0.1-7.1l5.7-21.2l0.1-9.5l-0.5-7l2.6-7.9l1.3-7.2l1.7-4.9l17.8,1.1l8-2.8l6.4-7.1l9.4-4.5
                             l13.1,6.6l6.6-5.9l7.2-1.8l7.6,8.9l5.9,5.5l8.5-6.7l4.3-0.2L559.7,1002L559.7,1002z"/>
-                            <circle class="outside-circle" data-name="pingtung_country" cx="410" cy="1250" r="55"></circle>
-                                <circle class="st2" data-name="pingtung_country" cx="410" cy="1250" r="55" fill="">
+                            <circle class="outside-circle" data-name="pingtung_country" cx="410" cy="1220" r="55"></circle>
+                                <circle class="st2" data-name="pingtung_country" cx="410" cy="1220" r="55" fill="">
                         </g>
                         <g id="tainan_city" data-name="tainan_city">
                             <path id="TWN1160" data-name="tainan_city" class="st0" d="M347.4,947.6l-0.6,1.2l-2.3-2l-1.7-4.2l0.3-1.3h0.7l0.9,1.2l0.7,1.9l2.1,2.2L347.4,947.6
@@ -421,9 +421,9 @@
                     <div id ="app">
                     <div class="title_area">
                         <div class="forcast" v-if="now_area">
-                            <div>{{now_area.place}}</div>
-                            <div>{{now_area.low}} °C ~ {{now_area.height}} °C</div>
-                            <div>{{now_area.weather}}</div>
+                            <div class="place" id="place">{{now_area.place}}</div>
+                            <div class="temperature" id="temperature">{{now_area.low}} °C ~ {{now_area.height}} °C</div>
+                            <div class="wx" id="wx">{{now_area.weather}}</div>
                         </div> 
                     </div> 
                 </div>

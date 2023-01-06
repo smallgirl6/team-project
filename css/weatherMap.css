@@ -21,13 +21,15 @@
   border-bottom: solid 2px #fff;
 }
 
-h4 {
-  margin: 0;
-  margin-top: 10px;
+.temperature{
+  opacity: 0;
 }
 
-h2 {
-  margin-top: 20px;
+.place{
+  opacity: 0;
+}
+.wx{
+  opacity: 0;
 }
 
 .taiwan-map{

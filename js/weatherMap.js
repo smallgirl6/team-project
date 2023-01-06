@@ -1,3 +1,29 @@
+// setTimeout(function() {
+//   place.style.opacity = "1";
+//   temperature.style.opacity = "1";
+//   wx.style.opacity = "1";
+// }, 1000)
+
+// map.addEventListener('mouseover', (event) => {
+//   place.style.opacity = "1";
+//   temperature.style.opacity = "1";
+//   wx.style.opacity = "1";
+// });
+
+const map = document.getElementById('taiwan-map');
+// const place = document.getElementById('place');
+// const tempture = document.getElementById('tempture')
+
+setTimeout(function()
+  {map.addEventListener('mouseover', (event) => {
+  place.style.opacity = "1";
+  temperature.style.opacity = "1";
+  wx.style.opacity = "1";
+});
+}, 1000)
+
+
+
 function isDayTime() {
   const date = new Date();
   const hours = date.getHours();
@@ -28,18 +54,6 @@ fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
     }
   ];
   
-  // var currentTime = new Date();
-  
-  // for (var i = 0; i < timeRanges.length; i++) {
-  //   var startTime = new Date(timeRanges[i].startTime);
-  //   var endTime = new Date(timeRanges[i].endTime);
-  //   if (currentTime >= startTime && currentTime < endTime) {
-  //     // console.log(startTime + endTime);
-  //     // console.log(currentTime);
-  //     var timenum = i
-  //     break;
-  //   }
-  // }
   const place_data=[
     {    
     tag: "taipei_city",
@@ -283,7 +297,7 @@ fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
           stnunmber.style.fill="url(#cloudy&moon4)";
         }
         else if (value.weathernum>4 && value.weathernum < 8){
-          // console.log(value.weathernum)
+          console.log(value.weathernum)
             stnunmber.style.fill="url(#cloudy5)";
         }
         else if (value.weathernum>7 && value.weathernum < 15 ){  
@@ -359,4 +373,5 @@ $("g").mouseenter(function(e){
     vm.filter=tagname;
   });
 });
+
  
