@@ -124,9 +124,11 @@ const view = {
     renderRainfall: function(dataTemp){
         // Display rainfall on web initial load (嘉義)
         const tempRainfallLocation = dataTemp.records.location[0];
+        const tomorrowDayRainfall = tempRainfallLocation.weatherElement[1].time[1].parameter.parameterName + " %";
+        const tomorrowNightRainfall = tempRainfallLocation.weatherElement[1].time[2].parameter.parameterName + " %";
 
-        $("#tomorrowDayRainfallRate").text(tempRainfallLocation.weatherElement[1].time[1].parameter.parameterName + " %");
-        $("#tomorrowNightRainFallRate").text(tempRainfallLocation.weatherElement[1].time[2].parameter.parameterName + " %");
+        $("#tomorrowDayRainfallRate").text(tomorrowDayRainfall);
+        $("#tomorrowNightRainFallRate").text(tomorrowNightRainfall);
     },
     renderError: function(err){
         console.log("Error: " + err);
