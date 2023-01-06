@@ -1,32 +1,24 @@
-* {
-  font-family: "Fjalla One";
-}
-
-.weather{
-  width: 1200px;
-  display:flex; 
-  margin-right: auto;
-  margin-left:  auto;
-}
-
 .app {
   flex: auto;
   margin-left: 0;
-  color: #6495ed;
-  font-size: 30px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .title_area {
   margin-left: 0;
-  color: #6495ed;
-  font-size: 30px;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .title_area hr {
   width: 150px;
   margin-left: 0;
   border: none;
-  border-bottom: solid 2px #6495ed;
+  border-bottom: solid 2px #fff;
 }
 
 h4 {
@@ -43,22 +35,18 @@ h2 {
 }
 
 svg {
-  height: 100vh;
+  height: 650px;
 }
 
 g {
-  stroke: #1e90ff;
-  fill: #f0ffff;
+  stroke: #054b85;
+  fill: #e6f8fc;
   cursor: pointer;
-} 
-
-g:hover {
-  fill: #6495ed;
-  transform: translate(-10px, -10px);
 }
 
-.outside-circle {
-  filter: brightness(200%) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+g:hover {
+  fill: #197ac9;
+  transform: translate(-5px, -5px);
 }
 
 @media (max-width:1200px){
@@ -72,4 +60,3 @@ g:hover {
       display:block; 
   }
 }
-  

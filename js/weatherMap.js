@@ -36,13 +36,13 @@ fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
     var startTime = new Date(timeRanges[i].startTime);
     var endTime = new Date(timeRanges[i].endTime);
     if (currentTime >= startTime && currentTime < endTime) {
-      console.log(startTime + endTime);
-      console.log(currentTime);
+      // console.log(startTime + endTime);
+      // console.log(currentTime);
       var timenum = i
       break;
     }
   }
-  console.log(result["records"]["location"][0]["weatherElement"][0]["time"][timenum]["parameter"]["parameterName"])
+  // console.log(result["records"]["location"][0]["weatherElement"][0]["time"][timenum]["parameter"]["parameterName"])
   const place_data=[
     {    
     tag: "taipei_city",
@@ -260,7 +260,7 @@ fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
   let dataName = stnunmber.getAttribute('data-name');
   $.each(place_data, function(index, value) {
     if (value.tag == dataName) {
-        console.log(value.tag + ":"+ value.weathernum); 
+        // console.log(value.tag + ":"+ value.weathernum); 
         if ((value.weathernum==1 || value.weathernum==24) && isDayTime()==true){
             stnunmber.style.fill="url(#sun1)";
         }
