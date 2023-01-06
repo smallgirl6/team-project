@@ -1,23 +1,36 @@
 const model = {
     init: function(){
+        const API_KEY = "CWB-DF2CB80E-CB70-453A-B35E-80356742388A";
+        
         async function getWeatherData(url){
             const response = await fetch(url);
             const data = await response.json();
             return data;
         };
         
-        const weatherDataTempPromise = getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-DF2CB80E-CB70-453A-B35E-80356742388A");
-        const weatherDataRainfallPromise = getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0002-001?Authorization=CWB-DF2CB80E-CB70-453A-B35E-80356742388A");
-        
-        Promise.all([weatherDataTempPromise, weatherDataRainfallPromise])
-        .then(([dataTemp, dataRainfall]) => {
-            view.render(dataTemp, dataRainfall);
+        getWeatherData("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=" + API_KEY)
+        .then(dataTemp => {
+            view.render(dataTemp);
+            view.renderDescriptionAndIcon(dataTemp);
+            view.renderWeatherTimeslot(dataTemp);
+            view.renderTemperature(dataTemp);
+            view.renderRainfall(dataTemp);
+            view.renderMouseText(dataTemp);
+        })
+        .catch(err => {
+            view.renderError(err);
         });
     }
 };
 
 const view = {
-    render: function(dataTemp, dataRainfall){
+    render: function(){
+        // Display the content on web initial load (嘉義)
+        $("#tomorrowDayWeather").css("opacity", "1");
+        $("#tomorrowNightWeather").css("opacity", "1");
+    },
+    renderDescriptionAndIcon: function(dataTemp){
+        // Display (1) weather description, and (2) weather icon on web initial load (嘉義)
         const dayWeatherList = {
             "陰時多雲": "img/day_cloudy_shade.png",
             "陰天": "img/day_overcast.png",
@@ -49,57 +62,74 @@ const view = {
             "陰時多雲短暫雨": "img/day_short_rain_shade.png"
         };
 
-        // Display the content on Web Initial Load (嘉義)
-        document.querySelector("#tomorrowDayWeather").style.opacity = "1";
-        document.querySelector("#tomorrowNightWeather").style.opacity = "1";
+        // Weather Timeslots
+        const weatherTimeslot1 = dataTemp.records.location[0].weatherElement[0].time[1];
+        const weatherTimeslot2 = dataTemp.records.location[0].weatherElement[0].time[2];
+        const dayTimeslot = weatherTimeslot2.startTime.split(" ").pop().split(":")[0] + ":00 ~ " + weatherTimeslot2.endTime.split(" ").pop().split(":")[0] + ":00";
 
-        // Weather Description on Web Initial Load (嘉義)
-        // 天氣第二格
-        if(dataTemp.records.location[0].weatherElement[0].time[1].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[0].weatherElement[0].time[1].endTime.split(" ").pop().split(":")[0] + ":00" == "18:00 ~ 06:00"){
-            document.querySelector("#tomorrowDayWeatherTitle").textContent = "今晚明晨"
+        if(dayTimeslot == "06:00 ~ 18:00"){
+            // Weather Description
+            $("#tomorrowDayWeatherTitle").text("今晚明晨");
+            $("#tomorrowNightWeatherTitle").text("明日白天");
+            // Weather Icon
+            $("#tomorrowDayWeatherIcon").attr("src", nightWeatherList[weatherTimeslot1.parameter.parameterName]);
+            $("#tomorrowNightWeatherIcon").attr("src", dayWeatherList[weatherTimeslot2.parameter.parameterName]);
         }
         else{
-            document.querySelector("#tomorrowDayWeatherTitle").textContent = "明日白天"
+            // Weather Description
+            $("#tomorrowDayWeatherTitle").text("明日白天");
+            $("#tomorrowNightWeatherTitle").text("明日晚上");
+            // Weather Icon
+            $("#tomorrowDayWeatherIcon").attr("src", dayWeatherList[weatherTimeslot1.parameter.parameterName]);
+            $("#tomorrowNightWeatherIcon").attr("src", nightWeatherList[weatherTimeslot2.parameter.parameterName]);
         };
-        // 天氣第三格
-        if(dataTemp.records.location[0].weatherElement[0].time[2].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[0].weatherElement[0].time[2].endTime.split(" ").pop().split(":")[0] + ":00" == "06:00 ~ 18:00"){
-            document.querySelector("#tomorrowNightWeatherTitle").textContent = "明日白天"
-        }
-        else{
-            document.querySelector("#tomorrowNightWeatherTitle").textContent = "明日晚上"
-        };
+    },
+    renderWeatherTimeslot: function(dataTemp){
+        // Display weather timeslots on web initial load (嘉義)
 
-        // Weather Period on Web Initial Load (嘉義)
-        document.querySelector("#tomorrowDayWeatherPeriod").textContent = dataTemp.records.location[0].weatherElement[0].time[1].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[0].weatherElement[0].time[1].endTime.split(" ").pop().split(":")[0] + ":00";
-        document.querySelector("#tomorrowNightWeatherPeriod").textContent = dataTemp.records.location[0].weatherElement[0].time[2].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[0].weatherElement[0].time[2].endTime.split(" ").pop().split(":")[0] + ":00";
+        // Weather Timeslots
+        const weatherTimeslot1 = dataTemp.records.location[0].weatherElement[0].time[1];
+        const weatherTimeslot2 = dataTemp.records.location[0].weatherElement[0].time[2];
+        // Day and Night Timeslots
+        const dayTimeslot = weatherTimeslot2.startTime.split(" ").pop().split(":")[0] + ":00 ~ " + weatherTimeslot2.endTime.split(" ").pop().split(":")[0] + ":00";
+        const nightTimeslot = weatherTimeslot1.startTime.split(" ").pop().split(":")[0] + ":00 ~ " + weatherTimeslot1.endTime.split(" ").pop().split(":")[0] + ":00";
 
-        // Weather Mouse Text on Web Initial Load (嘉義)
-        document.querySelector("#tomorrowDayWeatherIcon").title = dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName;
-        document.querySelector("#tomorrowNightWeatherIcon").title = dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName;
+        $("#tomorrowDayWeatherPeriod").text(nightTimeslot);
+        $("#tomorrowNightWeatherPeriod").text(dayTimeslot);
+    },
+    renderMouseText: function(dataTemp){
+        // Weather Timeslots
+        const weatherTimeslot1 = dataTemp.records.location[0].weatherElement[0].time[1];
+        const weatherTimeslot2 = dataTemp.records.location[0].weatherElement[0].time[2];
 
-        // Weather Icon on Web Initial Load (嘉義)
-        // 天氣第二格
-        if(dataTemp.records.location[0].weatherElement[0].time[1].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[0].weatherElement[0].time[1].endTime.split(" ").pop().split(":")[0] + ":00" == "06:00 ~ 18:00"){
-            document.querySelector("#tomorrowDayWeatherIcon").src = dayWeatherList[dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName];
-        }
-        else{
-            document.querySelector("#tomorrowDayWeatherIcon").src = nightWeatherList[dataTemp.records.location[0].weatherElement[0].time[1].parameter.parameterName];
-        };
-        // 天氣第三格
-        if(dataTemp.records.location[0].weatherElement[0].time[2].startTime.split(" ").pop().split(":")[0] + ":00 ~ " + dataTemp.records.location[0].weatherElement[0].time[2].endTime.split(" ").pop().split(":")[0] + ":00" == "06:00 ~ 18:00"){
-            document.querySelector("#tomorrowNightWeatherIcon").src = dayWeatherList[dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName];
-        }
-        else{
-            document.querySelector("#tomorrowNightWeatherIcon").src = nightWeatherList[dataTemp.records.location[0].weatherElement[0].time[2].parameter.parameterName];
-        };
+        // Weather mouse text on web initial load (嘉義)
+        $("#tomorrowDayWeatherIcon").attr("title", weatherTimeslot1.parameter.parameterName);
+        $("#tomorrowNightWeatherIcon").attr("title", weatherTimeslot2.parameter.parameterName);
+    },
+    renderTemperature: function(dataTemp){
+        // Display temperatures on web initial load (嘉義)
 
-        // Temperature on Web Initial Load (嘉義)
-        document.querySelector("#tomorrowDayWeatherTemp").textContent = dataTemp.records.location[0].weatherElement[2].time[1].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[1].parameter.parameterName + " °C";
-        document.querySelector("#tomorrowNightWeatherTemp").textContent = dataTemp.records.location[0].weatherElement[2].time[2].parameter.parameterName + " °C - " + dataTemp.records.location[0].weatherElement[4].time[2].parameter.parameterName + " °C";
-    
-        // Rainfall on Web Initial Load (嘉義)
-        document.querySelector("#tomorrowDayRainfallRate").textContent = dataTemp.records.location[0].weatherElement[1].time[1].parameter.parameterName + " %";
-        document.querySelector("#tomorrowNightRainFallRate").textContent = dataTemp.records.location[0].weatherElement[1].time[2].parameter.parameterName + " %";
+        // Temperature and Rainfall Locations
+        const tempRainfallLocation = dataTemp.records.location[0];
+        // Tomorrow Day Minimum and Maximum Temperatures
+        const tomorrowDayMinTemp = tempRainfallLocation.weatherElement[2].time[1].parameter.parameterName + " °C - ";
+        const tomorrowDayMaxTemp = tempRainfallLocation.weatherElement[4].time[1].parameter.parameterName + " °C";
+        // Tomorrow Night Minimum and Maximum Temperatures
+        const tomorrowNightMinTemp = tempRainfallLocation.weatherElement[2].time[2].parameter.parameterName + " °C - ";
+        const tomorrowNightMaxTemp = tempRainfallLocation.weatherElement[4].time[2].parameter.parameterName + " °C";
+
+        $("#tomorrowDayWeatherTemp").text(tomorrowDayMinTemp + tomorrowDayMaxTemp);
+        $("#tomorrowNightWeatherTemp").text(tomorrowNightMinTemp + tomorrowNightMaxTemp);
+    },
+    renderRainfall: function(dataTemp){
+        // Display rainfall on web initial load (嘉義)
+        const tempRainfallLocation = dataTemp.records.location[0];
+
+        $("#tomorrowDayRainfallRate").text(tempRainfallLocation.weatherElement[1].time[1].parameter.parameterName + " %");
+        $("#tomorrowNightRainFallRate").text(tempRainfallLocation.weatherElement[1].time[2].parameter.parameterName + " %");
+    },
+    renderError: function(err){
+        console.log("Error: " + err);
     }
 };
 
